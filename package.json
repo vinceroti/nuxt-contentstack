@@ -16,7 +16,8 @@
     "axios": "^0.18.0",
     "contentstack": "^3.4.1",
     "dotenv": "^6.0.0",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-awesome": "^2.3.7"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
