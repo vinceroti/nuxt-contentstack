@@ -1,34 +1,23 @@
 <template>
-  <p v-html="bio"/>
+  <div>
+    <p v-html="bio"/>
+    <img :src="img"/>
+  </div>
 </template>
 
 <script>
-import fetch from 'isomorphic-fetch'
-import contentstack from 'contentstack'
-
-const Stack = contentstack.Stack(process.env.CONTENTSTACK_API, process.env.CONTENTSTACK_TOKEN, 'staging')
+import Stack from '~/plugins/entry'
 
 export default {
   data () {
     return {
-      bio: ''
+      bio: '',
+      img: 'http://i1.adis.ws/i/k2skis/tubbs_1718_flex-trk-mens_pivot.jpg?h=300&w=400'
     }
   },
-  created() {
-    const self = this
-    const Query = Stack.ContentType('team_members').Entry('blt3ec29586cf35b4d6')
-    Query.fetch()
-    .then(function success(entry) {
-      entry = entry.toJSON()
-      self.entry = entry
-      self.bio = entry.bio
-      self.imgs = entry.lifestyle_photos
-    }, function error(err) {
-      console.log(err)
-    });
-  },
-  mounted() {
-
+  async asyncData() {
+    let res = await Stack.getEntry('team_members', 'blt3ec29586cf35b4d6')
+    return { entry: res, bio: res.bio }
   }
 }
 </script>

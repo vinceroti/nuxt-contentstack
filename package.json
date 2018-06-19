@@ -13,9 +13,9 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "contentstack": "^3.4.1",
     "dotenv": "^6.0.0",
-    "isomorphic-fetch": "^2.2.1",
     "nuxt": "^1.0.0"
   },
   "devDependencies": {
