@@ -13,11 +13,11 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/component-cache": "^1.1.2",
     "axios": "^0.18.0",
     "contentstack": "^3.4.1",
     "dotenv": "^6.0.0",
-    "nuxt": "^1.0.0",
-    "vue-awesome": "^2.3.7"
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

@@ -41,4 +41,7 @@ module.exports = {
     CONTENTSTACK_API: process.env.CONTENTSTACK_API,
     CONTENTSTACK_TOKEN: process.env.CONTENTSTACK_TOKEN
   },
+  modules: [
+    '@nuxtjs/component-cache',
+  ],
 }
