@@ -1,7 +1,9 @@
 <template>
   <div>
-    <router-link :to="{ name: 'testpage' }">test</router-link>
-    {{ time() }} - testing cache
+    <router-link :to="{ name: 'testpage' }">test</router-link>&nbsp;
+    <router-link :to="{ name: 'user-id', params: { id: 123 }}">User</router-link>
+    <p>{{ time() }} - testing cache</p>
+
     <div v-html="bio"/>
     <div class="flex-container">
       <img :src="img.src" v-for="(img, key) in imgdata.items" :key="key"/>
